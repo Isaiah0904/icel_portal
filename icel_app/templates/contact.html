@@ -1,0 +1,76 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="icon" href="{% static 'images/phone-solid.svg' %}">
+</head>
+<body>
+  <style>
+    .left {
+      background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("{% static 'images/office-building.jpg' %}") no-repeat center center;
+      background-size: cover;
+      color: white;
+      border-right: 1px solid #ccc;
+      justify-content: center;
+  } 
+  </style>
+  <div class="container">
+    <div class="left">
+      <a href="{% url 'homepage' %}"><img width="150px" src="{% static 'images/imperial crest logo.png' %}"></a>
+      <div class="info-container">
+        <div class="info">
+          <i class="fa-solid fa-location-dot"></i>
+          <p class="contact-subject">Address</p>
+          <h4>The Eshrow, 6th Floor, 2 Landbridge Road, Oniru - Victoria Island, Lagos - Nigeria</h4>
+        </div>
+        <div class="info">
+          <i class="fa-solid fa-phone"></i>
+          <p class="contact-subject">Let's Talk</p>
+          <span><a href="tel:+23481688159662">+234 816 881 5966</a></span>
+        </div>
+        <div class="info">
+          <i class="fa-solid fa-envelope"></i>
+          <p class="contact-subject">General Support</p>
+          <span><a href="mailto:itsupport@imperialcrestenergy.com">itsupport@imperialcrestenergy.com</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <img width="800px" src="{% static 'images/sustainability.png' %}">
+      <h2>Fill in your Complaint</h2>
+      <form id="contactForm" method="POST" action="{% url 'contact' %}">
+        {% csrf_token %}
+        <label for="firstName">Tell us your name *</label>
+        <div class="input-holder">
+          <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+          <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+        </div>
+        <div>
+          <label for="email">Enter your email *</label>
+          <input type="email" id="email" name="email" placeholder="Eg. itsupport@imperialcrestenergy.com" required>
+        </div>
+        <div>
+          <label for="phone">Enter your phone number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Eg. +234 805 356 4556">
+        </div>
+        <div>
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" rows="5" placeholder="Write your issue to us" required></textarea>
+        </div>
+        <div class="submit-btn">
+            <button type="submit">SEND MESSAGE</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="{% static 'js/contact.js' %}"></script>
+</body>
+</html>

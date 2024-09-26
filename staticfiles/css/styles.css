@@ -1,0 +1,238 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  height: 100vh;
+}
+.header{
+  width: 100%;
+  display: none;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  height: 100%;
+}
+.left-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 100%;
+  background-color: hsl(204, 43%, 93%);
+  height: 100%;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.left-content-carrier{
+  flex-basis: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.left-content h3{
+  font-weight: 700;
+  color: rgb(22, 182, 102);
+  text-align: center;
+}
+.right-content{
+  justify-content: center;
+  align-items: center;
+  flex-basis: 100%;
+  display: flex;
+  flex-shrink: 1;
+  margin: 0 8px;
+}
+.right-content-carrier{
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.right-content-carrier h1{
+  width: 100%;
+  text-align: center;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.right-content h1{
+  color: rgb(22, 182, 102);
+  font-weight: 600;
+  vertical-align: top;
+  width: 100%;
+}
+.username{
+  padding: 10px 0 10px 35px;
+  width: 290px;
+  border-radius: 3px;
+  border: 1px solid rgb(158, 158, 167);
+  color:  rgb(158, 158, 167);
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.username::placeholder, .password::placeholder, .email::placeholder{
+  font-size: 14px;
+  font-weight: 200;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.username:focus, .email:focus, .password:focus{
+  border: 1px solid rgb(22, 182, 102);
+  outline: none;
+  box-shadow: 0px 0px 8px 0px  rgb(22, 182, 102);
+  transition: .5s;
+}
+.email{
+  padding: 10px 0 10px 35px;
+  width: 88%;
+  border-radius: 3px;
+  border: 1px solid rgb(158, 158, 167);
+  color:  rgb(158, 158, 167);
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.password{
+  padding: 10px 0 10px 35px;
+  width: 88%;
+  border-radius: 3px;
+  border: 1px solid rgb(158, 158, 167);
+  color:  rgb(158, 158, 167);
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.call-to-action{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 7px;
+  justify-content: space-between;
+}
+.checkbox{
+  font-size: 13px;
+  vertical-align: middle;
+  margin: auto;
+  color:  rgb(158, 158, 167);
+}
+.forgot-password{
+  font-size: 13px;
+  color: rgb(22, 182, 102);
+}
+.forgot-password a{
+  text-decoration: none;
+  color: rgb(22, 182, 102);
+}
+.log-in-btn{
+  width: 100%;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  background: #1967fd;
+  border: none;
+  border-radius: 3px;
+  padding: 15px 0;
+  cursor: pointer;
+  margin-bottom: 0px;
+}
+.sign-up-link{
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(22, 182, 102);
+  text-decoration: none;
+  margin-top: 18px;
+}
+.log-in-btn:hover{
+  background: #0a4cfe;
+  transition: 0.5s ease-in-out;
+}
+.user{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.sign-up-link, .account{
+  font-size: 14px;
+  color: rgb(22, 182, 102);
+  text-align: center;
+}
+.input-box, .input-box-2{
+  position: relative;
+}
+.input-box-2 .fa-solid {
+  position: absolute;
+  top: 28%;
+  left: 3%;
+  transform: translateY(-4%)
+}
+.input-box .fa-solid {
+  position: absolute;
+  top: 29%;
+  left: 3%;
+  transform: translateY(-4%)
+}
+.input-box-2 .fa-regular{
+  position: absolute;
+  top: 30%;
+  left: 90%;
+  transform: translateY(-5%)
+}
+.error-message, .error-message-1, .error-message-2{
+  color: red;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+.error{
+  border: 2px solid rgb(252, 106, 106);
+}
+@media(min-width: 1450px){
+  .container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  }
+  .left-content img{
+    width: 100%;
+  }
+}
+@media(max-width: 750px){
+  .header{
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .container{
+    flex-direction: column;
+    gap: 40px;
+  }
+  .left-content{
+    background: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0px;
+  }
+  .left-content img{
+    width: 100%;
+  }
+  .right-content p{
+    margin-bottom: 30px;
+  }
+  body{
+    height: 100%;
+  }
+  .user{
+    display: none;
+  }
+  .username:focus, .email:focus, .password:focus{
+    box-shadow: none;
+  }
+}

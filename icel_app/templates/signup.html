@@ -1,0 +1,72 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  
+  <!-- Load static files -->
+  {% load static %}
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  
+  <!-- Link to CSS and JS files -->
+  <link rel="stylesheet" href="{% static 'css/sign-up.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="icon" href="{% static 'images/oil-well-solid.svg' %}">
+</head>
+<body>
+  <div class="header">
+    <img width="200px" src="{% static 'images/imperial-crest-logo.png' %}">
+  </div>
+  <div class="container">
+    <div class="left-content">
+      <div class="left-content-carrier">
+        <div>
+          <img src="{% static 'images/sign-up-form.png' %}">
+        </div>
+        <div class="description">
+          <h3>You can now be a part of this technological advancement.</h3>
+          <p class="sign">Sign Up</p>
+          <i class="fa-solid fa-arrow-right-long" style="color: #16b666; font-size: 25px;"></i>
+        </div>
+      </div>
+    </div>
+    <div class="right-content">
+      <div class="right-content-carrier">
+        <h1>Sign Up</h1>
+        <div class="user">
+          <img width="150px" src="{% static 'images/imperial-crest-logo.png' %}">
+        </div>
+        <form method="POST" action="{% url 'signup' %}">
+          {% csrf_token %}
+          <div class="input-box">
+            <i class="fa-solid fa-user" style="color: #16b666;"></i>
+            <input id="username" class="username" type="text" name="username" placeholder="Enter your Title & Name (e.g Mr John)" required><br><br>
+          </div>
+          <div class="input-box">
+            <i class="fa-solid fa-envelope" style="color: #16b666;"></i>
+            <input id="email-input" class="email" type="email" name="email" placeholder="Email (e.g. user@imperialcrestenergy.com)" required><br><br>
+          </div>
+          <div class="input-box">
+            <i class="fa-solid fa-lock" style="color: #16b666;"></i>
+            <input id="password" class="password" type="password" name="password" placeholder="Create password" required>
+            <i id="eyeicon" class="fa-regular fa-eye" style="color: #16b666;" onclick="togglePassword()"></i><br><br>
+          </div>
+          <div class="input-box-2">
+            <i class="fa-solid fa-lock" style="color: #16b666;"></i>
+            <input id="password-2" class="password" type="password" name="confirm_password" placeholder="Confirm password" required>
+            <i onclick="togglePassword2()" id="eyeicon-2" class="fa-regular fa-eye" style="color: #16b666;"></i><br>
+          </div>
+          <p class="error-message">{{ form.non_field_errors }}</p>
+          <p class="password-info">Password must be at least 8 characters long and include a mix of uppercase and lowercase letters, numbers and special characters.</p>
+          <button type="submit" class="log-in-btn">Sign Up</button><br>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

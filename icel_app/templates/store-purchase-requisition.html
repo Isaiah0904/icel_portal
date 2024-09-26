@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="store-purchase-requisition.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="icon" href="images/envelope-solid.svg">
+  <title>Store Purchasing Requisition</title>
+</head>
+<body>
+<script src="store-purchase-requisition.js"></script>
+  <div class="navigation-links-left">
+    <a href="requisitions.html"><img src="images/imperial-crest-logo.png"></a>
+    <h1>STORE PURCHASING REQUISITION</h1>
+  </div>
+  <div class="content">
+    <div class="content-body">
+      <form>
+        <div class="content-1">
+          <div class="">
+            <p>Department: <input type="text" required></p>
+          </div>
+          <div class="date">
+            <span>Date *:</span>
+            <input type="date" required>
+          </div>
+          <div class="">
+            <label>Payment method *:</label>
+            <div class="">
+              <input type="radio" name="payment-method" required>
+              <label>Cash</label>
+            </div>
+            <div class="">
+              <input type="radio" name="payment-method">
+              <label>Transfer</label>
+            </div>
+            <div class="">
+              <input type="radio" name="payment-method">
+              <label>Cheque</label>
+            </div>
+          </div>
+          <div class="">
+            <span>Account details *:</span>
+            <input type="text" required>
+          </div>
+        </div>
+        <table id="table">
+          <tr>
+              <th>Item</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Description Of Goods/Services</th>
+              <th>Subtotal</th>
+          </tr>
+          <tr>
+              <td>Item 1</td>
+              <td><input type="number" value="0" class="price" oninput="calculateSubtotal(this)"></td>
+              <td><input type="number" value="0" class="quantity" oninput="calculateSubtotal(this)"></td>
+              <td><input type="text"  class="Description Of Goods/Services"></td>
+              <td class="subtotal">0</td>
+          </tr>
+          <tr>
+              <td>Item 2</td>
+              <td><input type="number" value="0" class="price" oninput="calculateSubtotal(this)"></td>
+              <td><input type="number" value="0" class="quantity" oninput="calculateSubtotal(this)"></td>
+              <td><input type="text"  class="Description Of Goods/Services"></td>
+              <td class="subtotal">0</td>
+          </tr>
+          <tr>
+              <td>Item 3</td>
+              <td><input type="number" value="0" class="price" oninput="calculateSubtotal(this)"></td>
+              <td><input type="number" value="0" class="quantity" oninput="calculateSubtotal(this)"></td>
+              <td><input type="text"  class="Description Of Goods/Services"></td>
+              <td class="subtotal">0</td>
+          </tr>
+          <tr>
+              <td colspan="4">Total</td>
+              <td id="total">0</td>
+          </tr>
+        </table>
+        <div class="row-btn">
+          <button class="add-row" type="button" onclick="addRow()">Add Row</button>
+          <button class="delete-row" type="button" onclick="deleteRow()">Delete Row</button>
+        </div>
+        <div class="content-2">
+          <div class="content-1">
+            <div class="option-1">
+              <label>Name of Store *:</label>
+              <input type="text">
+            </div>
+            <div class="option-1">
+              <p>Budgeted Expenditure *:</p>
+              <input type="radio" name="budget" required><span>Yes</span>
+              <input type="radio" name="budget" required><span>No</span>
+            </div>
+            <div class="option-1">
+              <p>Funds Available *:</p>
+              <input type="radio" name="funds" required><span>Yes</span>
+              <input type="radio" name="funds" required><span>No</span>
+            </div>
+            <div class="option-1">
+              <p>Acquired at Store *:</p>
+              <input type="radio" name="store" required><span>Yes</span>
+              <input type="radio" name="store" required><span>No</span>
+            </div>
+            <div class="option-1">
+              <label>Budget Description *:</label>
+              <input type="text" required>
+            </div>
+          </div>
+        </div>
+        <div class="request">
+          <div class="footer">
+            <h1>Requested By:</h1>
+            <div class="">
+              <label>Name* :</label>
+              <input class="req-name" type="text" required>
+            </div>
+            <div class="">
+              <label>Designation* :</label>
+              <input class="req-des" type="text" required>
+            </div>
+            <div class="">
+              <label for="date">Date* :</label>
+              <input class="req-date" type="date" name="footer" id="Date" required>
+            </div>
+          </div>
+          <div class="footer">
+            <h1>Authorization Info:</h1>
+            <div class="">
+              <label>Name* :</label>
+              <input class="req-name" type="text" required>
+            </div>
+            <div class="">
+              <label>Designation* : </label>
+              <input class="req-des" type="text" required>
+            </div>
+            <div class="">
+              <label for="date">Date* :</label>
+              <input class="req-date" type="date" name="footer" id="Date" required>
+            </div>
+            <div class="">
+              <label for="mail">Email* :</label>
+              <input class="req-mail" type="mail" name="footer" id="Mail" required>
+            </div>
+          </div>
+          <div class="footer">
+            <h1>Approval Info:</h1>
+            <div class="">
+              <label>Name* :</label>
+              <input class="req-name" type="text" required>
+            </div>
+            <div class="">
+              <label>Designation* :</label>
+              <input class="req-des" type="text" required>
+            </div>
+            <div class="">
+              <label for="date">Date* :</label>
+              <input class="req-date" type="date" name="footer" id="Date" required>
+            </div>
+            <div class="">
+              <label for="mail">Email* :</label>
+              <input class="req-mail" type="mail" name="footer" id="Mail" required>
+            </div>
+          </div>
+        </div>
+        <div class="row-btn">
+          <button class="submit" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="footer-info">
+    <p>Imperial Crest Energy Limited &#169 2024</p>
+  </div>
+</body>
+</html>

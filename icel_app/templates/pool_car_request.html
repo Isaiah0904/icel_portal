@@ -1,0 +1,125 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Car Request Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/pool-car-request.css' %}">
+    <link rel="icon" href="{% static 'images/car-solid.svg' %}">
+</head>
+<body>
+<style>
+  body {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  background: url('{% static "images/pool-car.jpg" %}') no-repeat center center fixed;
+  background-size: cover;
+  flex-direction: column;
+}
+</style>
+
+  <div class="content">
+    <div class="navbar">
+      <div class="navbar-holder">
+        <a href="{% url 'homepage' %}"><img src="{% static 'images/imperial-crest-logo.png' %}" alt="Logo"></a>
+      </div>
+    </div>
+    <div id="travelFormContainer" class="container">
+      <div class="container-content">
+        <div class="close" onclick="hideForm()"><i class="fas fa-times"></i></div>
+        <header>Pool Car Request Form</header>
+        <h4>Enter the details for your Pool Car request</h4>
+        <form id="travelForm" action="{% url 'pool_car_request' %}" method="POST">
+          {% csrf_token %}
+          <div class="dep-date">
+            <label for="R-datecheckin">Date Requested *</label>
+            <input type="date" id="R-datecheckin" name="R-datecheckin" required>
+          </div>
+          <div class="airline">
+            <label for="Requestor Name">Requestor Name *</label>
+            <input type="text" id="requestor_name" name="requestor_name" required>
+          </div>
+          <div class="airline">
+            <label for="Phone Number">Phone Number *</label>
+            <input type="tel" id="phone_number" name="phone_number" required>
+          </div>
+          <div class="trip">
+            <div>
+              <label for="Number of passenger(S)">Number of Car(s) *</label>
+            </div>
+            <div class="trip-1">
+              <input type="radio" name="car_no" value="1" required><span>1</span>
+            </div>
+            <div class="trip-1">
+              <input type="radio" name="car_no" value="2"><span>2</span>
+            </div>
+          </div>
+          <div class="airline">
+            <label for="Pick-up Location">Pick-up Location *</label>
+            <input type="text" id="pick_up_location" name="pick_up_location" required>
+          </div>
+          <div class="airline">
+            <label for="Drop-off Destination">Drop-off Destination *</label>
+            <input type="text" id="drop_off_destination" name="drop_off_destination" required>
+          </div>
+          <div class="airline">
+            <label for="Return Location">Return Location *</label>
+            <input type="text" id="return_location" name="return_location" required>
+          </div>
+          <div class="airline">
+            <label for="Purpose of Trip">Purpose of Trip *</label>
+            <input type="text" id="purpose_of_trip" name="purpose_of_trip" required>
+          </div>
+          <div class="dep-date">
+            <label for="Depaturecheckin">Departure Date *</label>
+            <input type="date" id="Depaturecheckin" name="departure_date" required>
+          </div>
+          <div class="dep-date">
+            <label for="Returncheckin">Return Date *</label>
+            <input type="date" id="Returncheckin" name="return_date" required>
+          </div>
+          <div class="dep-date">
+            <label for="DpaturecheckinTime">Departure Time *</label>
+            <input type="time" id="DpaturecheckinTime" name="departure_time" required>
+          </div>
+          <div class="dep-date">
+            <label for="Estimatedcheckin">Estimated Return Time *</label>
+            <input type="time" id="Estimatedcheckin" name="estimated_return_time" required>
+          </div>
+          <div class="request">
+            <h4>Director/Supervisor Information</h4>
+            <div class="airline">
+              <label for="Namecheckin">Name *</label>
+              <input type="text" id="director_name" name="director_name" required>
+            </div>
+            <div class="airline">
+              <label for="Designationcheckin">Designation *</label>
+              <input type="text" id="director_designation" name="director_designation" required>
+            </div>
+            <div class="airline">
+              <label for="Emailcheckin">Email *</label>
+              <input type="email" id="director_email" name="director_email" required>
+            </div>
+          </div>
+          <div class="submit">
+              <button type="submit" class="submit-btn">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="travelForm">
+        <button onclick="showForm()" type="submit" class="travelForm-btn">Request a Pool Car</button>
+    </div>
+  </div>
+    <script src="{% static 'js/pool-car-request.js' %}"></script>
+</body>
+</html>

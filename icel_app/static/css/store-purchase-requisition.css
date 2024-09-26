@@ -1,0 +1,267 @@
+body{
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.navigation-links-left{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2% 0;
+}
+.navigation-links-left img{
+  width: 300px;
+}
+.content{
+  width: 100%;
+}
+.content-body{
+  width: 95%;
+  text-align: center;
+  margin: auto;
+}
+.content-body input{
+  font-size: 17px;
+  outline: none;
+  border: none;
+  background: none;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+table input{
+  border-bottom: none;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.content-1 input, .recommend input, .request input{
+  border-bottom: 2px solid black;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.content-1 [type = "text"]{
+  width: 28%;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.content-1 [type = "date"]{
+  width: 33%;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.po{
+  width: 73%;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.service{
+  width: 51%;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.service-po{
+  width: 52%;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.req-name{
+  width: 64%;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.req-date{
+  width: 68%;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.req-mail{
+  width: 67%;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.content-1{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  text-align: left;
+  padding-bottom: 2%;
+  gap: 15px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2% 0;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.calculator-input {
+  width: 80px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+.td input {
+  width: 100%;
+  box-sizing: content-box;
+  text-align: right;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.row-btn{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 3%;
+}
+.add-row, .submit{
+  color: white;
+  background: black;
+  border: 2px solid black;
+  font-size: 17px;
+  padding: 13px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.delete-row{
+  color: white;
+  background: red;
+  border: 2px solid red;
+  font-size: 17px;
+  padding: 13px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.add-row:hover, .submit:hover{
+  background: white;
+  color: black;
+  border: 2px solid black;
+  transition: 0.5s;
+}
+.delete-row:hover{
+  background: white;
+  color: red;
+  border: 2px solid red;
+  transition: 0.5s;
+
+}
+.content-2{
+  width: 100%;
+  text-align: left;
+}
+.option-1 p{
+  margin: 0;
+}
+.recommend{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  text-align: left;
+  padding: 2% 0;
+}
+.footer{
+  padding-bottom: 5%;
+}
+.request{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  width: 100%;
+  text-align: left;
+  line-height: 50px;
+  padding: 30px 0;
+}
+.footer-info{
+  width: 100%;
+  text-align: center;
+  background: black;
+  padding: 10px 0;
+  color: white;
+  font-size: 15px;
+}
+@media(min-width: 1450px){
+  .content-1 [type = "text"]{
+    width: 50%;
+  }
+  .content-1 [type = "date"]{
+    width: 51.5%;
+    padding-left: 0;
+  }
+  .service{
+    width: 57.5%;
+  }
+  .service-po{
+    width: 58%;
+  }
+  .req-des{
+    width: 57.5%;
+  }
+  .req-name{
+    width: 66%;
+  }
+  .footer-info{
+    font-size: 20px;
+  }
+}
+@media(max-width: 800px){
+  .navigation-links-left img{
+    width: 200px;
+  }
+  .navigation-links-left{
+    width: 100%;
+    padding: 2% 2%;
+    gap: 50px;
+    text-align: center;
+  }
+  .content-1{
+    display: flex;
+    flex-direction: column;
+  }
+  .content-1 div{
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .request{
+    display: flex;
+    flex-direction: column;
+  }
+  .req-des{
+    width: 52%;
+  }
+}

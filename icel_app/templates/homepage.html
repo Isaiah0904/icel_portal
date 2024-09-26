@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/proxima-nova-condensed" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.5/index.global.min.css" rel="stylesheet">            
+  <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.5/index.global.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="icon" href="{% static 'images/house-solid.svg' %}">
+  <title>Employee Portal Home page</title>
+</head>
+
+<style>
+  .header{
+  width: 100%;
+  background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url("{% static 'images/oil-rig.jpg' %}");
+  background-position: center;
+  background-size: cover;
+  height: 130vh;
+}
+</style>
+<body>
+  <div class="header">
+    <nav>
+      <div class="navigation-links">
+        <div class="navigation-links-left">
+          <a href="{% url 'homepage' %}"><img src="{% static 'images/imperial crest logo.png' %}" alt="ICEL Logo"></a>
+        </div>
+        <i onclick="showMenu()" class="fa-solid fa-bars"></i>
+        <div id="navLinks" class="navigation-links-right">
+          <i onclick="hideMenu()" class="fa-solid fa-xmark"></i>
+          <ul>
+            <li><a onclick="hideMenu()" href="#home">Home</a></li>
+            <li><a onclick="hideMenu()" href="#calendar-header">ICEL Calendar</a></li>
+            <li><a onclick="hideMenu()" href="#about-team">About Team</a></li>
+            <li><a href="{% url 'index' %}">Log out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="content">
+      <h1 id="home">Welcome ICEL Employee</h1>
+      <h2>Vision</h2>
+      <p>To be a model of inclusive excellence, empowering and enriching all stakeholders, while promoting sustainability in the energy sector.</p>
+      <h2>Mission</h2>
+      <p>Our objective is to responsibly create a sustainable energy ecosystem that prioritises social, economic, and environmental well-being through the collaborative deployment of innovative and cost-effective solutions.</p>
+      <h2>Core Values</h2>
+      <ul>
+        <li>Value Creation & Partnership</li>
+        <li>Integrity & Respect</li>
+        <li>Leadership & Excellence</li>
+      </ul>
+    </div>
+    <div class="button-container">
+      <a href="{% url 'incident_form' %}"><button class="fill-btn">Fill a Safety Form</button></a>
+      <a href="{% url 'pool_car_request' %}"><button class="fill-btn-2">Pool Car Request</button></a>
+      <a href="{% url 'travel_notice' %}"><button class="fill-btn">Travel Notice Form</button></a>
+      <a href="{% url 'contact' %}"><button class="fill-btn">IT Complaint Form</button></a>
+      <a href="{% url 'requisitions_form' %}"><button class="fill-btn">Requisitions</button></a>
+    </div>
+  </div>
+  <div class="calendar">
+    <h1 id="calendar-header">ICEL Calendar</h1>
+    <div id="calendar"></div>
+  </div>
+  <div class="services">
+    <h1>Services you can Access</h1>
+    <p class="services-desc">What Services can you access on our Online Platform</p>
+    <div class="services-column">
+      <div class="column-1">
+        <img src="{% static 'images/car.jpg' %}">
+        <h3>Pool Car Request Form</h3>
+        <p>Requesting for a pool car has now been made easier. This feature allows you to request and submit your requisition for the company pool car.</p>
+      </div>
+      <div class="column-1">
+        <img src="{% static 'images/form.jpg' %}">
+        <h3>Incident Report Form</h3>
+        <p>Tracking and reporting Health, Safety and Environment (HSE) Reports can now easily be accessed on this dynamic online platform accessible to every ICEL staff.</p>
+      </div>
+      <div class="column-1">
+        <img src="{% static 'images/plane-2.jpg' %}">
+        <h3>Travel Notice Form</h3>
+        <p>Have to be on a local or international flight under short notice? Booking Flights has been made easier just by filling a short form which would be sent to the appropriate designation.</p>
+      </div>
+    </div>
+  </div>
+  <div class="aboutteam-section">
+    <div class="about-team">
+      <h3  id="about-team">About Team</h3>
+      <div class="team-member">
+        <img src="{% static 'images/plane.jpg' %}" alt="A profile picture of Isaiah">
+        <div class="team-descr">
+          <p class="name"><strong>DAVID ONI</strong></p>
+          <p class="position">IT SUPPORT INTERN | WEB DEVELOPER | GAME DEVELOPER</p>
+          <p class="info">David Oni, with passion for learing and innovation. David's career focus is in Information Technology, Web and games Development, and passion for Graphic design. David is currently a student of Robert Gordon University (Aberdeen) Scotland. A very creative person, loves innovation and exploration in new things. Life ambition is to become a global voice in web and game development</p>
+        </div>
+        <img src="{% static 'images/plane.jpg' %}" alt="A profile picture of David">
+        <div class="team-descr">
+          <p class="name"><strong>DUROJAIYE ISAIAH</strong></p>
+          <p class="position">IT SUPPORT INTERN | TRAINING FULL STACK DEVELOPER</p>
+          <p class="info">Isaiah is currently a front end developer who is aspiring and training to become a full stack developer. During the course of this project, he was an Intern on the SIWES program seeking how to contribute his knowledge on information technologies (IT) into the fast emerging and growing Imperial Crest Energy Limited. His contribution to this project was majorly the functionality and the layout of every visible feature.</p>
+        </div>
+        <img src="{% static 'images/plane.jpg' %}" alt="A profile picture of Bamisaye">
+        <div class="team-descr">
+          <p class="name"><strong>BAMISAYE OLAMITOKE</strong></p>
+          <p class="position">IT SUPPORT CONSULTANT | NETWORKING EXPERT</p>
+          <p class="info">Bamisaye is a highly motivated and experienced IT officer with 3 years of expertise in managing complex IT projects, leading cross-functional teams, and driving technological innovation. Proven track record of delivering projects on time, within budget, and to stakeholders' satisfaction.
+            Successfully overseen the completion of ICEL staff Portal project, an initiative that enhanced our organization's efficiency digitally.</p>
+        </div>
+      </div>
+    </div>  
+  </div>
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up" style="color: #ffffff;"></i></button>
+  <div class="footer">
+    <a href="https://instagram.com/imperialcrestenergy"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/company/imperialcrestenergy"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="https://facebook.com/imperialcrestenergy"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://twitter.com/icelglobal"><i class="fa-brands fa-x-twitter"></i></a>
+  </div>
+  <div class="footer-info">
+    <p>Imperial Crest Energy Limited &#169 2024</p>
+  </div>
+  <script src="{% static 'js/homepage.js' %}"></script>
+</body>
+</html>

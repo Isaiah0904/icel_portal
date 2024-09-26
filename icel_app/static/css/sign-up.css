@@ -1,0 +1,279 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  height: 100vh;
+}
+.header{
+  width: 100%;
+  display: none;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  height: 100%;
+}
+.left-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 100%;
+  background-color: hsl(204, 43%, 93%);
+  height: 100%;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.left-content-carrier{
+  flex-basis: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.description{
+  text-align: center;
+  margin: 0px 8px;
+}
+.left-content h3{
+  font-weight: 700;
+  color: rgb(22, 182, 102);
+  text-align: center;
+  margin-bottom: 0;
+}
+.sign{
+  font-weight: 700;
+  color: rgb(22, 182, 102);
+  margin-bottom: 10px;
+  margin-top: 8px;
+  text-align: center;
+}
+.right-content{
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  flex-shrink: 1;
+  margin: 0 8px;
+}
+.right-content-carrier{
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.right-content-carrier h1{
+  width: 100%;
+  text-align: center;
+}
+.right-content h1{
+  color: rgb(22, 182, 102);
+  font-weight: 600;
+  vertical-align: top;
+  width: 100%;
+}
+.username{
+  padding: 10px 0 10px 35px;
+  width: 90%;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid rgb(22, 182, 102);
+  color:  rgb(158, 158, 167);
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.username::placeholder, .password::placeholder{
+  font-size: 14px;
+  font-weight: 200;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.username:focus, .email:focus, .password:focus{
+  outline: none;
+}
+.email{
+  padding: 10px 0 10px 35px;
+  width: 90%;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid rgb(22, 182, 102);
+  color:  rgb(158, 158, 167);
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.password{
+  padding: 10px 0 10px 35px;
+  width: 90%;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid rgb(22, 182, 102);
+  color:  rgb(158, 158, 167);
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.password-info{
+  text-align: left;
+  margin: auto;
+  font-size: 11px;
+  margin: 5px 0;
+  font-weight: 500;
+  color: rgb(22, 182, 102);
+  width: 90%;
+}
+.call-to-action{
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: space-between;
+}
+
+.checkbox{
+  font-size: 13px;
+  vertical-align: middle;
+  margin: auto;
+  color:  rgb(158, 158, 167);
+}
+.forgot-password{
+  font-size: 13px;
+  color: rgb(22, 182, 102);
+}
+.log-in-btn{
+  width: 90%;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  background: #1967fd;
+  border: none;
+  border-radius: 3px;
+  padding: 15px 0;
+  cursor: pointer;
+  margin-top: 12px;
+}
+.log-in-btn:hover{
+  background: #0a4cfe;
+  transition: 0.5s ease-in-out;
+}
+.user{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.input-box, .input-box-2{
+  position: relative;
+}
+.input-box .fa-solid{
+  position: absolute;
+  top: 16%;
+  left: 1%;
+  transform: translateY(-4%)
+}
+.input-box-2 .fa-solid{
+  position: absolute;
+  top: 23%;
+  left: 1%;
+  transform: translateY(-4%)
+}
+.input-box .fa-regular{
+  position: absolute;
+  top: 17%;
+  left: 83%;
+  transform: translateY(-5%)
+}
+.input-box-2 .fa-regular{
+  position: absolute;
+  top: 30%;
+  left: 83%;
+  transform: translateY(-5%)
+}
+.error-message, .error-message-1{
+  color: red;
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+.error{
+  border-bottom: 2px solid  red;
+}
+@media(min-width: 1450px){
+  .container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  }
+  .left-content img{
+    width: 100%;
+  }
+  .right-content-carrier{
+    width: 45%;
+  }
+}
+@media(max-width: 750px){
+  .header{
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .container{
+    flex-direction: column;
+    gap: 40px;
+  }
+  .left-content{
+    background: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0px;
+  }
+  .left-content img{
+    width: 100%;
+  }
+  .right-content p{
+    margin-bottom: 30px;
+  }
+  .right-content-carrier{
+    width: 80%;
+  }
+  body{
+    height: 100%;
+  }
+  .user{
+    display: none;
+  }
+  .username:focus, .email:focus, .password:focus{
+    box-shadow: none;
+  }
+  .log-in-btn{
+    margin-bottom: 30px;
+    margin-top: 0;
+  }
+  .description .fa-solid{
+    transform: rotate(90deg);
+  }
+  .username, .email, .password, .password-2, .log-in-btn{
+    width: 100%;
+  }
+  .email{
+    font-size: 13px;
+  }
+  .input-box .fa-regular{
+    position: absolute;
+    top: 17%;
+    left: 90%;
+    transform: translateY(-5%)
+  }
+  .input-box-2 .fa-regular{
+    position: absolute;
+    top: 30%;
+    left: 90%;
+    transform: translateY(-5%)
+  }
+}

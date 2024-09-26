@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/incident-form.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="icon" href="{% static 'images/oil-well-solid.svg' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <title>Incident Report Form</title>
+</head>
+<body>
+  <div class="header">
+    <div class="section1">
+      <a href="{% url 'homepage' %}"><img src="{% static 'images/imperial-crest-logo.png' %}"></a>
+      <p>The Eshrow, 6th Floor, 2 Landbridge Road, Oniru - Victoria Island, Lagos - Nigeria</p>
+    </div>
+    <div class="section2">
+      .
+    </div>
+    <div class="section3">
+      .
+    </div>
+  </div>
+  <div class="mid-body-container">
+    <div class="mid-body-header">
+      <h1>INCIDENT REPORT FORM</h1>
+    </div>
+    <form action="{% url 'incident_form' %}" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="mid-body-content">
+        <div class="content-1">
+          <p class="content-p">ID No. :</p>
+          <input type="text" name="id_no" value="ICEL/" minlength="15" maxlength="15" required>
+        </div>
+        <div class="content-2">
+          <p class="content-p">Date :</p>
+          <input type="date" name="date" required>
+        </div>
+        <div class="content-3">
+          <p>Dear Sir/Madam.</p>
+          <span class="content-desc">Below is the Safety Report Procedure (SRP). You can simply fill in the information below to report the incident to the Health Safety and Environment (HSE) Officer.</span>
+        </div>
+        <div class="content-4">
+          <p>Staff Department:</p>
+          <input type="text" name="department" maxlength="25" required>
+        </div>
+      </div>  
+      <div class="form-header">
+        <div class="form-header-1">
+          <h3>Incident Details</h3>
+        </div>
+        <div class="form-header-2">
+          .
+        </div> 
+        <div class="form-header-3">
+          .
+        </div>
+      </div>
+      <div class="mid-body-container">
+        <div class="mid-body-content-2">
+          <div class="incident-type">
+            <h3>Incident Type</h3>
+            <div class="incident-type-1">
+              <input type="checkbox" class="radio" value="Accident" name="incident_type" /><label>Accident</label>
+            </div>
+            <div class="incident-type-1">
+              <input type="checkbox" class="radio" value="Near Miss" name="incident_type" /><label>Near Miss</label>
+            </div>
+            <div class="incident-type-1">
+              <input type="checkbox" class="radio" value="Unsafe Act" name="incident_type" /><label>Unsafe Act</label>
+            </div>
+            <div class="incident-type-1">
+              <input type="checkbox" class="radio" value="Unsafe Condition" name="incident_type" /><label>Unsafe Condition</label>
+            </div>
+            <div class="incident-type-1">
+              <input type="checkbox" class="radio" value="Positive Behaviour" name="incident_type" /><label>Positive Behaviour</label>
+            </div>
+          </div>
+          <div class="form-content-2">
+            <p>Location</p>
+            <input type="text" name="location" required>
+          </div>
+          <div class="form-content-3">
+            <p>Incident Description</p>
+            <textarea name="description" rows="4" cols="40" required></textarea>
+          </div>
+          <div class="form-content-4">
+            <p>Immediate Corrective/Reinforcement Action</p>
+            <textarea name="corrective_action" rows="4" cols="40" required></textarea>
+          </div>
+          <div class="form-content-5">
+            <p>Date Observed</p>
+            <input type="date" name="date_observed" required>
+          </div>
+          <div class="form-content-6">
+            <p>Date Reported</p>
+            <input type="date" name="date_reported" required>
+          </div>
+          <div class="form-content-7">
+            <p>Observed by</p>
+            <input type="text" name="observed_by" required>
+          </div>
+          <div class="form-content-8">
+            <p>Incident Report Category</p>
+            <div class="selector">
+              <div id="selectField">
+                <p id="selectText">Select the appropriate category</p>
+                <i id="arrowIcon" class="fa-solid fa-caret-down" style="color: #ffffff;"></i>
+              </div>
+              <ul id="list" class="hide">
+                <li class="options"><input type="radio" name="category" value="PPE"> PPE</li>
+                <li class="options"><input type="radio" name="category" value="Work Environment"> Work Environment</li>
+                <li class="options"><input type="radio" name="category" value="Ergonomics"> Ergonomics</li>
+                <li class="options"><input type="radio" name="category" value="Tools & Equipments"> Tools & Equipments</li>
+                <li class="options"><input type="radio" name="category" value="Procedures"> Procedures</li>
+                <li class="options"><input type="radio" name="category" value="Slip"> Slip</li>
+                <li class="options"><input type="radio" name="category" value="Trip & Fall"> Trip & Fall</li>
+              </ul>
+            </div>
+          </div>
+          <div class="form-content-9">
+            <label class="upload" for="incident-upload">Upload a picture of the incident:</label>
+            <input class="file-upload" id="incident-upload" name="incident_upload" type="file">
+          </div>
+        </div>
+        <div class="submission">
+          <button type="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+    <div class="footer-info">
+      <p>Imperial Crest Energy Limited &#169; 2024</p>
+    </div>
+  <script src="{% static 'js/incident-form.js' %}"></script>
+</body>
+</html>

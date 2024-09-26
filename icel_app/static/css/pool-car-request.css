@@ -1,0 +1,188 @@
+.content{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+.navbar {
+  width: 100%;
+  background-color: #fcfcfc;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  height: 15vh;
+  z-index: 100;
+}
+.navbar-holder{
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1% 2%;
+  height: 100%;
+}
+.navbar-holder img {
+  height: 70px;
+}
+.navbar-holder a {
+  color: black;
+}
+.navbar i {
+  font-size: 35px;
+  color: rgb(22, 182, 102);
+}
+.container {
+  width: 550px;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 125px;
+  bottom: 0;
+  left: -800px;
+  transition: left 2.5s;
+  overflow: auto;
+  z-index: 0;
+  box-sizing: border-box;
+}
+.container-content{
+  text-align: left;
+  margin: auto;
+}
+header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.submit-btn {
+  width: 50%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.submit-btn:hover {
+  background-color: #0056b3;
+  transition: 0.5s;
+}
+.travelForm {
+  background-color: #5180b3;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+
+}
+.travelForm-btn {
+  padding: 20px;
+  background-color: #497099;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 36px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.close i {
+  font-size: 24px;
+}
+.submit{
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  margin-top: 45px;
+}
+.trip{
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+.airline p{
+  margin: 8px 0;
+}
+.trip-1{
+  margin-bottom: 8px;
+}
+.passenger-name, .airline, .ticket-type, .flight-type, .dep-date, .departure-time{
+  margin: 15px 0;
+}
+.passenger-name input, .airline input{
+  background: transparent;
+  width: 80%;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid black;
+  padding-top: 5px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.passenger-name input:focus, .airline input:focus{
+  border-bottom: 2px solid #0056b3;
+  transition: 0.5s;
+}
+.ticket-type p{
+  margin: 5px 0;
+}
+.type-1{
+  margin-bottom: 8px;
+}
+.flight-type .flight-1{
+  margin-bottom: 8px;
+}
+.dep-date input{
+  background: none;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 80%;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.departure-time div{
+  margin: 8px 0;
+}
+.container-content label{
+  font-weight: 600;
+  font-size: 17px;
+  display: block;
+  margin: 7px 0;
+}
+.request{
+  margin-top: 50px;
+}
+@media(min-width: 1450px){
+  .navbar{
+    height: 11.3vh;
+  }
+}
+@media(max-width: 800px){
+  .container{
+    width: 100%;
+    right: 0;
+    border-top-right-radius: 0px;
+    transition: 2s;
+    top: 185px;
+  }
+  .travelForm-btn{
+    font-size: 13.4px;
+    padding: 10px;
+  }
+}
