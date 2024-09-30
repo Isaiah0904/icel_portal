@@ -13,6 +13,22 @@
   <link rel="icon" href="{% static 'images/oil-well-solid.svg' %}">
 </head>
 <body>
+  <style>
+    /* Style the success messages to appear in green */
+.messages .success {
+    color: green;         /* Change text color to green */
+    font-weight: bold;    /* Optional: Make the text bold */
+    padding: 10px;        /* Optional: Add some padding for visibility */
+    margin-top: 10px;     /* Space between the message and other elements */
+}
+ul.messages{
+  padding-left: 0;
+  width: 100%;
+}
+.error{
+  border: 0px;
+}
+  </style>
   <div class="header">
     <img width="200px" src="{% static 'images/imperial-crest-logo.png' %}">
   </div>
@@ -32,15 +48,19 @@
         <h1>Log In</h1>
         <div class="user">
           <img width="150px" src="{% static 'images/imperial-crest-logo.png' %}">
-        </div>
-        {% if error_message %}
-          <div class="error-message">{{ error_message }}</div>
-        {% endif %}
+          {% if messages %}
+          <ul class="messages">
+              {% for message in messages %}
+                  <div class="{% if message.tags %}{{ message.tags }}{% endif %} error-message">{{ message }}</div>
+              {% endfor %}
+          </ul>
+          {% endif %}          
         <form method="POST" action="{% url 'index' %}">
           {% csrf_token %}
+            {{form.as_p}}
           <div class="input-box">
             <i class="fa-solid fa-user" style="color: #16b666;"></i>
-            <input id="email" class="username" type="email" name="email" placeholder="Enter your Email..." required>
+            <input id="username" class="username" type="text" name="username" placeholder="Enter your username..." required>
           </div>
           <div class="input-box-2">
             <i class="padlock fa-solid fa-lock" style="color: #16b666;"></i>

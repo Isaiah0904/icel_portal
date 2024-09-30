@@ -90,7 +90,7 @@ body{
   font-style: normal;
 }
 .username::placeholder, .password::placeholder{
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 200;
   font-family: "Poppins", sans-serif;
   font-style: normal;
@@ -105,7 +105,7 @@ body{
   border: none;
   border-bottom: 2px solid rgb(22, 182, 102);
   color:  rgb(158, 158, 167);
-  font-size: 16px;
+  font-size: 13px;
   font-family: "Poppins", sans-serif;
   font-style: normal;
 }
@@ -116,14 +116,14 @@ body{
   border: none;
   border-bottom: 2px solid rgb(22, 182, 102);
   color:  rgb(158, 158, 167);
-  font-size: 16px;
+  font-size: 13px;
   font-family: "Poppins", sans-serif;
   font-style: normal;
 }
 .password-info{
   text-align: left;
   margin: auto;
-  font-size: 11px;
+  font-size: 13px;
   margin: 5px 0;
   font-weight: 500;
   color: rgb(22, 182, 102);
@@ -195,6 +195,7 @@ body{
 }
 .error-message, .error-message-1{
   color: red;
+  list-style: none;
   font-size: 14px;
   margin-top: 15px;
   margin-bottom: 0;

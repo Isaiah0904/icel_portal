@@ -19,6 +19,16 @@
   <link rel="icon" href="{% static 'images/oil-well-solid.svg' %}">
 </head>
 <body>
+  <style>
+    ul.errorlist {
+  list-style-type: none;  /* Removes the bullet points */
+  padding-left: 0;       /* Removes padding for the list */
+  color: red;             /* Changes the text color to red */
+}
+ul.errorlist li {
+  color: red;             /* Ensures that individual error messages are red */
+}
+  </style>
   <div class="header">
     <img width="200px" src="{% static 'images/imperial-crest-logo.png' %}">
   </div>
@@ -45,11 +55,11 @@
           {% csrf_token %}
           <div class="input-box">
             <i class="fa-solid fa-user" style="color: #16b666;"></i>
-            <input id="username" class="username" type="text" name="username" placeholder="Enter your Title & Name (e.g Mr John)" required><br><br>
+            <input id="username" class="username" type="text" name="username" placeholder="Username (i.e First name)" required><br><br>
           </div>
           <div class="input-box">
             <i class="fa-solid fa-envelope" style="color: #16b666;"></i>
-            <input id="email-input" class="email" type="email" name="email" placeholder="Email (e.g. user@imperialcrestenergy.com)" required><br><br>
+            <input id="email-input" class="email" type="email" name="email" placeholder="Enter your email" required><br><br>
           </div>
           <div class="input-box">
             <i class="fa-solid fa-lock" style="color: #16b666;"></i>
@@ -68,5 +78,38 @@
       </div>
     </div>
   </div>
+  <script>
+    function togglePassword() {
+  let showPassword = document.getElementById("eyeicon")
+  let password = document.getElementById("password")
+    
+  if (password.type === "password") {
+    password.type = "text"
+    showPassword.classList.remove('fa-eye')
+    showPassword.classList.add('fa-eye-slash')
+  }
+  else {
+    password.type = "password"
+    showPassword.classList.remove('fa-eye-slash')
+    showPassword.classList.add('fa-eye')
+  }
+}
+
+function togglePassword2() {
+  let showPassword = document.getElementById("eyeicon-2")
+  let password = document.getElementById("password-2")
+    
+  if (password.type === "password") {
+    password.type = "text"
+    showPassword.classList.remove('fa-eye')
+    showPassword.classList.add('fa-eye-slash')
+  }
+  else {
+    password.type = "password"
+    showPassword.classList.remove('fa-eye-slash')
+    showPassword.classList.add('fa-eye')
+  }
+}
+  </script>
 </body>
 </html>

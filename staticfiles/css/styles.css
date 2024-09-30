@@ -4,6 +4,7 @@ body{
   font-family: "Poppins", sans-serif;
   font-style: normal;
   height: 100vh;
+  background-color: green;
 }
 .header{
   width: 100%;
@@ -189,9 +190,6 @@ form{
   font-size: 14px;
   font-weight: 500;
   margin: 0;
-}
-.error{
-  border: 2px solid rgb(252, 106, 106);
 }
 @media(min-width: 1450px){
   .container{
